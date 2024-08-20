@@ -1,0 +1,25 @@
+//1)for dynamic filtering
+@Override
+	public List<Tester> getByRequest(FilterByRequest request) {
+	
+	
+		Tester test = new Tester();
+	
+		if(StringUtils.isNotEmpty(request.getCityMode()))
+		{
+			test.setCityMode(request.getCityMode());
+		}
+		if(StringUtils.isNotEmpty(request.getEmpCity()))
+		{
+			test.setEmpCity(request.getEmpCity());
+		}
+		if(StringUtils.isNotEmpty(request.getWorkMode()))
+		{
+			test.setWorkMode(request.getWorkMode());
+		}
+		Example<Tester> of = Example.of(test);
+	 
+		List<Tester> enqlist = testerRepository.findAll(of);
+		
+		return enqlist;
+	}
