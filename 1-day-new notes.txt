@@ -1,0 +1,9 @@
+//1)these will automatically save date and updated data       
+
+@CreationTimestamp
+	private LocalDate createdDate;
+@UpdateTimestamp
+	private LocalDate updatedDate;
+	
+//2)always use wrapper classes while declaring the variable
+private Integer counsellorId;
